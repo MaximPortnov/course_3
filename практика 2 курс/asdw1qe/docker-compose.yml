@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root@max # Укажите свой пароль
+      MYSQL_DATABASE: db_slava   # Имя создаваемой базы данных
+      MYSQL_USER: slava            # Имя пользователя
+      MYSQL_PASSWORD: slava228    # Пароль пользователя
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    environment:
+      PMA_HOST: db
+      PMA_USER: slava              # Имя пользователя, как указано выше
+      PMA_PASSWORD: slava228      # Пароль пользователя, как указано выше
+      UPLOAD_LIMIT: 50M           # Ограничение загрузки файла, можно изменить по вашему усмотрению
+    ports:
+      - ":80"
+
+volumes:
+  db_data: {}
+

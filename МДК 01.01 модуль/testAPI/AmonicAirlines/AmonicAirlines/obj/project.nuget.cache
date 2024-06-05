@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "g2KMX0RDmXWi4+TOQBHZHXxqg7aGXlBKbYA7FtXQObm5a5/2328gcGavrxaASyYwW/hhkU6VWk4NB4OXYiBK4A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\portm\\Desktop\\testAPI\\AmonicAirlines\\AmonicAirlines\\AmonicAirlines.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\portm\\.nuget\\packages\\extended.wpf.toolkit\\4.6.0\\extended.wpf.toolkit.4.6.0.nupkg.sha512",
+    "C:\\Users\\portm\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

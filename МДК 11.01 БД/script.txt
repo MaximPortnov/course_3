@@ -1,0 +1,139 @@
+/****** Object:  Table [dbo].[Fakulteti]    Script Date: 21.09.2023 18:43:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Fakulteti](
+	[Kod_fakulteta] [int] NOT NULL,
+	[Name_fakulteta] [varchar](max) NULL,
+	[FIO] [varchar](max) NULL,
+	[N_komnatu_dekanata] [varchar](max) NULL,
+	[Telefon_dekanata] [varchar](max) NULL,
+ CONSTRAINT [PK_Fakulteti] PRIMARY KEY CLUSTERED 
+(
+	[Kod_fakulteta] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Kafedra]    Script Date: 21.09.2023 18:43:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Kafedra](
+	[Kod_kafedru] [int] NOT NULL,
+	[Kod_fakulteta] [int] NOT NULL,
+	[Name_kafedru] [varchar](max) NULL,
+	[FIO] [varchar](max) NULL,
+	[N_komnatu_kafedru] [varchar](max) NULL,
+	[Telefon_kafedru] [varchar](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+/****** Object:  Table [dbo].[Grupu]    Script Date: 21.09.2023 18:47:11 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Grupu](
+	[Kod_grupu] [int] NOT NULL,
+	[Kod_kafedru] [int] NULL,
+	[N_grupu] [varchar](max) NULL,
+	[God_post] [int] NULL,
+	[Kurs] [int] NULL,
+ CONSTRAINT [PK_Grupu] PRIMARY KEY CLUSTERED 
+(
+	[Kod_grupu] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Prepodavately]    Script Date: 21.09.2023 18:47:11 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Prepodavately](
+	[Kod_prepodavately] [int] NOT NULL,
+	[Kod_kafedru] [int] NOT NULL,
+	[FIO] [varchar](max) NULL,
+	[Dolgnost] [varchar](max) NULL,
+	[Zvanie] [varchar](max) NULL,
+	[Stavka] [int] NULL,
+	[Stag] [int] NULL,
+	[Address] [varchar](max) NULL,
+	[Vozrast] [int] NULL,
+ CONSTRAINT [PK_Prepodavately] PRIMARY KEY CLUSTERED 
+(
+	[Kod_prepodavately] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+/****** Object:  Table [dbo].[Students]    Script Date: 21.09.2023 18:43:15 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Students](
+	[Kod_studenta] [int] NOT NULL,
+	[Kod_grupu] [int] NOT NULL,
+	[FIO] [varchar](max) NULL,
+	[God_rogdeniya] [int] NULL,
+	[Address] [varchar](max) NULL,
+ CONSTRAINT [PK_Students] PRIMARY KEY CLUSTERED 
+(
+	[Kod_studenta] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Disciplane]    Script Date: 21.09.2023 19:00:10 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Disciplane](
+	[Kod_disciplinu] [int] NULL,
+	[Kod_kafedru] [int] NULL,
+	[Name_dis] [varchar](max) NOT NULL,
+	[Raschasovka] [int] NOT NULL,
+	[Kontrol] [varchar](max) NOT NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+/****** Object:  Table [dbo].[Podchinennaya_tablica_vedomosti]    Script Date: 21.09.2023 14:53:25 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Podchinennaya_tablica_vedomosti](
+	[Kod_pod_vedomopsti] [int] NOT NULL,
+	[Kod_ vedomopsti] [int] NOT NULL,
+	[Kod_studenta] [int] NOT NULL,
+	[Osenka] [int] NULL,
+ CONSTRAINT [PK_Podchinennaya_tablica_vedomosti] PRIMARY KEY CLUSTERED 
+(
+	[Kod_pod_vedomopsti] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Vedomosti]    Script Date: 21.09.2023 14:53:25 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Vedomosti](
+	[Kod_vedomopsti] [int] NOT NULL,
+	[Kod_grupu] [int] NOT NULL,
+	[Kod_disciplinu] [int] NOT NULL,
+	[Kod_prepodavately] [int] NOT NULL,
+	[God] [int] NULL,
+	[Semestr] [int] NULL,
+ CONSTRAINT [PK_Vedomosti] PRIMARY KEY CLUSTERED 
+(
+	[Kod_vedomopsti] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO

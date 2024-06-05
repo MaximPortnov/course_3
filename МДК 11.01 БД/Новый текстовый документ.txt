@@ -1,0 +1,15 @@
+INSERT INTO [dbo].[Students] ([Kod_studenta],[Kod_grupu],[FIO],[God_rogdeniya],[Address])
+     VALUES (1,1,'Барсук Кирилл Денисович','2005','Лазарева 3')
+GO
+INSERT INTO [dbo].[Students] ([Kod_studenta],[Kod_grupu],[FIO],[God_rogdeniya],[Address])
+     VALUES (2,2,'Пахомов Иван Евгеньевич','2005','Менделеева 20')
+GO
+INSERT INTO [dbo].[Students] ([Kod_studenta],[Kod_grupu],[FIO],[God_rogdeniya],[Address])
+     VALUES (3,3,'Симонов Олег Васильевич','2004','Гоголя 2')
+GO
+INSERT INTO [dbo].[Students] ([Kod_studenta],[Kod_grupu],[FIO],[God_rogdeniya],[Address])
+     VALUES (4,4,'Первушин Василий Викторович','2005','Трикотажная 10')
+GO
+INSERT INTO [dbo].[Students] ([Kod_studenta],[Kod_grupu],[FIO],[God_rogdeniya],[Address])
+     VALUES (5,5,'Портнов Денис Егорович','2004','Республиканская 92')
+GO

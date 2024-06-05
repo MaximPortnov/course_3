@@ -1,0 +1,1062 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.os.Bundle;
+import android.view.MenuItem;
+
+public class Activity1 extends AppCompatActivity {
+
+    final String ATTRIBUTE_NAME_TEXT = "text";
+    final String ATTRIBUTE_NAME_CHECKED = "checked";
+    final String ATTRIBUTE_NAME_IMAGE = "image";
+
+    ListView lvSimple;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_1);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        String[] texts = { "sometext 1", "sometext 2", "sometext 3",
+                "sometext 4", "sometext 5" };
+        boolean[] checked = { true, false, false, true, false };
+        int img = R.mipmap.handsome_man_foreground;
+
+        // упаковываем данные в понятную для адаптера структуру
+        ArrayList<Map<String, Object>> data = new ArrayList<Map<String, Object>>(
+                texts.length);
+        Map<String, Object> m;
+        for (int i = 0; i < texts.length; i++) {
+            m = new HashMap<String, Object>();
+            m.put(ATTRIBUTE_NAME_TEXT, texts[i]);
+            m.put(ATTRIBUTE_NAME_CHECKED, checked[i]);
+            m.put(ATTRIBUTE_NAME_IMAGE, img);
+            data.add(m);
+        }
+        // массив имен атрибутов, из которых будут читаться данные
+        String[] from = { ATTRIBUTE_NAME_TEXT, ATTRIBUTE_NAME_CHECKED,
+                ATTRIBUTE_NAME_IMAGE, ATTRIBUTE_NAME_TEXT };
+
+        // массив ID View-компонентов, в которые будут вставлять данные
+        int[] to = { R.id.tvText, R.id.cbChecked, R.id.ivImg, R.id.cbChecked };
+
+        // создаем адаптер
+        SimpleAdapter sAdapter = new SimpleAdapter(this, data, R.layout.item,
+                from, to);
+
+        // определяем список и присваиваем ему адаптер
+        lvSimple = (ListView) findViewById(R.id.lvSimple);
+        lvSimple.setAdapter(sAdapter);
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}
+
+--
+
+package com.example.barsukpr18;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import android.os.Bundle;
+import android.view.MenuItem;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+
+
+public class Activity2 extends AppCompatActivity {
+
+    final String ATTRIBUTE_NAME_TEXT = "text";
+    final String ATTRIBUTE_NAME_VALUE = "value";
+    final String ATTRIBUTE_NAME_IMAGE = "image";
+
+    // картинки для отображения динамики
+    final int positive = android.R.drawable.arrow_up_float;
+    final int negative = android.R.drawable.arrow_down_float;
+    ListView lvSimple;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_2);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        int[] values = {12, 4, 0, 2, -5, -6, 3, -6, 1, -1};
+
+        // упаковываем данные в понятную для адаптера структуру
+        ArrayList<Map<String, Object>> data = new ArrayList<Map<String, Object>>(
+                values.length);
+        Map<String, Object> m;
+        int img = 0;
+        for (int i = 0; i < values.length; i++) {
+            m = new HashMap<String, Object>();
+            m.put(ATTRIBUTE_NAME_TEXT, "Day " + (i + 1));
+            m.put(ATTRIBUTE_NAME_VALUE, values[i]);
+            if (values[i] == 0) img = 0;
+            else
+                img = (values[i] > 0) ? positive : negative;
+            m.put(ATTRIBUTE_NAME_IMAGE, img);
+            data.add(m);
+        }
+        // массив имен атрибутов, из которых будут читаться данные
+        String[] from = {ATTRIBUTE_NAME_TEXT, ATTRIBUTE_NAME_VALUE,
+                ATTRIBUTE_NAME_IMAGE};
+        // массив ID View-компонентов, в которые будут вставлять данные
+        int[] to = {R.id.tvText, R.id.tvValue, R.id.ivImg};
+
+        // создаем адаптер
+        MySimpleAdapter sAdapter = new MySimpleAdapter(this, data,
+                R.layout.item2, from, to);
+
+        // определяем список и присваиваем ему адаптер
+        lvSimple = (ListView) findViewById(R.id.lvSimple);
+        lvSimple.setAdapter(sAdapter);
+    }
+
+    class MySimpleAdapter extends SimpleAdapter {
+
+        public MySimpleAdapter(Context context,
+                               List<? extends Map<String, ?>> data, int resource,
+                               String[] from, int[] to) {
+            super(context, data, resource, from, to);
+        }
+
+        @Override
+        public void setViewText(TextView v, String text) {
+            // метод супер-класса, который вставляет текст
+            super.setViewText(v, text);
+            // если нужный нам TextView, то разрисовываем
+            if (v.getId() == R.id.tvValue) {
+                int i = Integer.parseInt(text);
+                if (i < 0) v.setTextColor(Color.RED);
+                else if (i > 0) v.setTextColor(Color.GREEN);
+            }
+        }
+
+        @Override
+        public void setViewImage(ImageView v, int value) {
+            // метод супер-класса
+            super.setViewImage(v, value);
+            // разрисовываем ImageView
+            if (value == negative) v.setBackgroundColor(Color.RED);
+            else if (value == positive) v.setBackgroundColor(Color.GREEN);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}
+
+--
+
+package com.example.barsukpr18;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import android.os.Bundle;
+import android.view.MenuItem;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.SimpleAdapter;
+
+public class Activity3 extends AppCompatActivity {
+
+    final String ATTRIBUTE_NAME_TEXT = "text";
+    final String ATTRIBUTE_NAME_PB = "pb";
+    final String ATTRIBUTE_NAME_LL = "ll";
+
+    ListView lvSimple;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_3);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        int load[] = { 41, 48, 22, 35, 30, 67, 51, 88 };
+
+        // упаковываем данные в понятную для адаптера структуру
+        ArrayList<Map<String, Object>> data = new ArrayList<Map<String, Object>>(
+                load.length);
+        Map<String, Object> m;
+        for (int i = 0; i < load.length; i++) {
+            m = new HashMap<String, Object>();
+            m.put(ATTRIBUTE_NAME_TEXT, "Day " + (i+1) + ". Load: " + load[i] + "%");
+            m.put(ATTRIBUTE_NAME_PB, load[i]);
+            m.put(ATTRIBUTE_NAME_LL, load[i]);
+            data.add(m);
+        }
+        // массив имен атрибутов, из которых будут читаться данные
+        String[] from = { ATTRIBUTE_NAME_TEXT, ATTRIBUTE_NAME_PB,
+                ATTRIBUTE_NAME_LL };
+        // массив ID View-компонентов, в которые будут вставлять данные
+        int[] to = { R.id.tvLoad, R.id.pbLoad, R.id.llLoad };
+
+        // создаем адаптер
+        SimpleAdapter sAdapter = new SimpleAdapter(this, data, R.layout.item3,
+                from, to);
+        // Указываем адаптеру свой биндер
+        sAdapter.setViewBinder(new MyViewBinder());
+
+        // определяем список и присваиваем ему адаптер
+        lvSimple = (ListView) findViewById(R.id.lvSimple);
+        lvSimple.setAdapter(sAdapter);
+    }
+    class MyViewBinder implements SimpleAdapter.ViewBinder {
+        int red = getResources().getColor(R.color.Red);
+        int orange = getResources().getColor(R.color.Orange);
+        int green = getResources().getColor(R.color.Green);
+        @Override
+        public boolean setViewValue(View view, Object data,
+                                    String textRepresentation) {
+            int i = 0;
+            if (view.getId() == R.id.llLoad) {
+                i = ((Integer) data).intValue();
+                if (i < 40) {
+                    view.setBackgroundColor(green);
+                } else if (i < 70) {
+                    view.setBackgroundColor(orange);
+                } else {
+                    view.setBackgroundColor(red);
+                }
+                return true;
+            } else if (view.getId() == R.id.pbLoad) {
+                i = ((Integer) data).intValue();
+                ((ProgressBar)view).setProgress(i);
+                return true;
+            }
+            return false;
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}
+
+--
+
+package com.example.barsukpr18;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.os.Bundle;
+import android.view.MenuItem;
+
+public class Activity4 extends AppCompatActivity {
+
+    private static final int CM_DELETE_ID = 1;
+
+    // имена атрибутов для Map
+    final String ATTRIBUTE_NAME_TEXT = "text";
+    final String ATTRIBUTE_NAME_IMAGE = "image";
+
+    ListView lvSimple;
+    SimpleAdapter sAdapter;
+    ArrayList<Map<String, Object>> data;
+    Map<String, Object> m;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_4);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        data = new ArrayList<Map<String, Object>>();
+        for (int i = 1; i < 5; i++) {
+            m = new HashMap<String, Object>();
+            m.put(ATTRIBUTE_NAME_TEXT, "sometext " + i);
+            m.put(ATTRIBUTE_NAME_IMAGE, R.mipmap.not_handsome_man_foreground);
+            data.add(m);
+        }
+
+        // массив имен атрибутов, из которых будут читаться данные
+        String[] from = { ATTRIBUTE_NAME_TEXT, ATTRIBUTE_NAME_IMAGE };
+        // массив ID View-компонентов, в которые будут вставлять данные
+        int[] to = { R.id.tvText, R.id.ivImg };
+
+        // создаем адаптер
+        sAdapter = new SimpleAdapter(this, data, R.layout.item4, from, to);
+
+        // определяем список и присваиваем ему адаптер
+        lvSimple = (ListView) findViewById(R.id.lvSimple);
+        lvSimple.setAdapter(sAdapter);
+        registerForContextMenu(lvSimple);
+    }
+    public void onButtonClick(View v) {
+        // создаем новый Map
+        m = new HashMap<String, Object>();
+        m.put(ATTRIBUTE_NAME_TEXT, "sometext " + (data.size() + 1));
+        m.put(ATTRIBUTE_NAME_IMAGE, R.mipmap.not_handsome_man_foreground);
+        // добавляем его в коллекцию
+        data.add(m);
+        // уведомляем, что данные изменились
+        sAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.add(0, CM_DELETE_ID, 0, "Удалить запись");
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        if (item.getItemId() == CM_DELETE_ID) {
+            // получаем инфу о пункте списка
+            AdapterContextMenuInfo acmi = (AdapterContextMenuInfo) item.getMenuInfo();
+            // удаляем Map из коллекции, используя позицию пункта в списке
+            data.remove(acmi.position);
+            // уведомляем, что данные изменились
+            sAdapter.notifyDataSetChanged();
+            return true;
+        }
+        return super.onContextItemSelected(item);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}
+
+--
+
+package com.example.barsukpr18;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import android.app.Activity;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
+import android.os.Bundle;
+import android.view.MenuItem;
+
+public class Activity5 extends AppCompatActivity {
+
+    private static final int CM_DELETE_ID = 1;
+    ListView lvData;
+    DB db;
+    SimpleCursorAdapter scAdapter;
+    Cursor cursor;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_5);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
+        // открываем подключение к БД
+        db = new DB(this);
+        db.open();
+
+        // получаем курсор
+        cursor = db.getAllData();
+        startManagingCursor(cursor);
+
+        // формируем столбцы сопоставления
+        String[] from = new String[] { DB.COLUMN_IMG, DB.COLUMN_TXT };
+        int[] to = new int[] { R.id.ivImg, R.id.tvText };
+
+        // создааем адаптер и настраиваем список
+        scAdapter = new SimpleCursorAdapter(this, R.layout.item5, cursor, from, to);
+        lvData = (ListView) findViewById(R.id.lvData);
+        lvData.setAdapter(scAdapter);
+
+        // добавляем контекстное меню к списку
+        registerForContextMenu(lvData);
+    }
+    public void onButtonClick(View view) {
+        // добавляем запись
+        db.addRec("sometext " + (cursor.getCount() + 1), R.mipmap.another_handsome_man_foreground);
+        // обновляем курсор
+        cursor.requery();
+    }
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.add(0, CM_DELETE_ID, 0, R.string.delete_record);
+    }
+
+    public boolean onContextItemSelected(MenuItem item) {
+        if (item.getItemId() == CM_DELETE_ID) {
+            // получаем из пункта контекстного меню данные по пункту списка
+            AdapterContextMenuInfo acmi = (AdapterContextMenuInfo) item.getMenuInfo();
+            // извлекаем id записи и удаляем соответствующую запись в БД
+            db.delRec(acmi.id);
+            // обновляем курсор
+            cursor.requery();
+            return true;
+        }
+        return super.onContextItemSelected(item);
+    }
+
+    protected void onDestroy() {
+        super.onDestroy();
+        // закрываем подключение при выходе
+        db.close();
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}
+
+--
+
+package com.example.barsukpr18;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import android.app.Activity;
+import android.content.Context;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.widget.ExpandableListView;
+import android.widget.SimpleCursorTreeAdapter;
+import android.os.Bundle;
+import android.view.MenuItem;
+
+public class Activity6 extends AppCompatActivity {
+
+    ExpandableListView elvMain;
+    DB2 db;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_6);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        db = new DB2(this);
+        db.open();
+
+        // готовим данные по группам для адаптера
+        Cursor cursor = db.getCompanyData();
+        startManagingCursor(cursor);
+        // сопоставление данных и View для групп
+        String[] groupFrom = { DB2.COMPANY_COLUMN_NAME };
+        int[] groupTo = { android.R.id.text1 };
+        // сопоставление данных и View для элементов
+        String[] childFrom = { DB2.PHONE_COLUMN_NAME };
+        int[] childTo = { android.R.id.text1 };
+
+        // создаем адаптер и настраиваем список
+        SimpleCursorTreeAdapter sctAdapter = new MyAdapter(this, cursor,
+                android.R.layout.simple_expandable_list_item_1, groupFrom,
+                groupTo, android.R.layout.simple_list_item_1, childFrom,
+                childTo);
+        elvMain = (ExpandableListView) findViewById(R.id.elvMain);
+        elvMain.setAdapter(sctAdapter);
+    }
+    protected void onDestroy() {
+        super.onDestroy();
+        db.close();
+    }
+
+    class MyAdapter extends SimpleCursorTreeAdapter {
+
+        public MyAdapter(Context context, Cursor cursor, int groupLayout,
+                         String[] groupFrom, int[] groupTo, int childLayout,
+                         String[] childFrom, int[] childTo) {
+            super(context, cursor, groupLayout, groupFrom, groupTo,
+                    childLayout, childFrom, childTo);
+        }
+
+        protected Cursor getChildrenCursor(Cursor groupCursor) {
+            // получаем курсор по элементам для конкретной группы
+            int idColumn = groupCursor.getColumnIndex(DB2.COMPANY_COLUMN_ID);
+            return db.getPhoneData(groupCursor.getInt(idColumn));
+        }
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}
+
+--
+
+package com.example.barsukpr18;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import java.util.ArrayList;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.os.Bundle;
+import android.view.MenuItem;
+
+public class Activity7 extends AppCompatActivity {
+    ArrayList<Product> products = new ArrayList<Product>();
+    BoxAdapter boxAdapter;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_7);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        fillData();
+        boxAdapter = new BoxAdapter(this, products);
+
+        // настраиваем список
+        ListView lvMain = (ListView) findViewById(R.id.lvMain);
+        lvMain.setAdapter(boxAdapter);
+    }
+
+    // генерируем данные для адаптера
+    void fillData() {
+        for (int i = 1; i <= 20; i++) {
+            products.add(new Product("Product " + i, i * 1000,
+                    R.mipmap.another_not_handsome_man_foreground, false));
+        }
+    }
+    // выводим информацию о корзине
+
+//    public void showResult(View v) {
+//        String result = "Товары в корзине:";
+//        for (Product p : boxAdapter.getBox()) {
+//            if (p.box)
+//                result += "\n" + p.name;
+//        }
+//        Toast toast = Toast.makeText(this, result, Toast.LENGTH_LONG);
+//        toast.setGravity(Gravity.CENTER, 0, 0); // устанавливаем выравнивание
+//        toast.setMargin(0, 0.1f); // устанавливаем отступы
+//        toast.show();
+//    }
+
+
+    public void showResult(View v) {
+        String result = "Товары в корзине:";
+        for (Product p : boxAdapter.getBox()) {
+            if (p.box)
+                result += "\n" + p.name;
+        }
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast,
+                (ViewGroup) findViewById(R.id.custom_toast_container));
+
+        TextView text = (TextView) layout.findViewById(R.id.text);
+        text.setText(result);
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}
+
+--
+
+package com.example.barsukpr18;
+
+import java.util.ArrayList;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class BoxAdapter extends BaseAdapter {
+    Context ctx2;
+    LayoutInflater lInflater;
+    ArrayList<Product> objects;
+
+    BoxAdapter(Context context, ArrayList<Product> products) {
+        ctx2 = context;
+        objects = products;
+        lInflater = (LayoutInflater) ctx2
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    }
+
+    // кол-во элементов
+    @Override
+    public int getCount() {
+        return objects.size();
+    }
+
+    // элемент по позиции
+    @Override
+    public Object getItem(int position) {
+        return objects.get(position);
+    }
+
+    // id по позиции
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    // пункт списка
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        // используем созданные, но не используемые view
+        View view = convertView;
+        if (view == null) {
+            view = lInflater.inflate(R.layout.item6, parent, false);
+        }
+
+        Product p = getProduct(position);
+
+        // заполняем View в пункте списка данными из товаров: наименование, цена
+        // и картинка
+        ((TextView) view.findViewById(R.id.tvDescr)).setText(p.name);
+        ((TextView) view.findViewById(R.id.tvPrice)).setText(p.price + "");
+        ((ImageView) view.findViewById(R.id.ivImage)).setImageResource(p.image);
+
+        CheckBox cbBuy = (CheckBox) view.findViewById(R.id.cbBox);
+        // присваиваем чекбоксу обработчик
+        cbBuy.setOnCheckedChangeListener(myCheckChangeList);
+        // пишем позицию
+        cbBuy.setTag(position);
+        // заполняем данными из товаров: в корзине или нет
+        cbBuy.setChecked(p.box);
+        return view;
+    }
+
+    // товар по позиции
+    Product getProduct(int position) {
+        return ((Product) getItem(position));
+    }
+
+    // содержимое корзины
+    ArrayList<Product> getBox() {
+        ArrayList<Product> box = new ArrayList<Product>();
+        for (Product p : objects) {
+            // если в корзине
+            if (p.box)
+                box.add(p);
+        }
+        return box;
+    }
+
+    // обработчик для чекбоксов
+    OnCheckedChangeListener myCheckChangeList = new OnCheckedChangeListener() {
+        public void onCheckedChanged(CompoundButton buttonView,
+                                     boolean isChecked) {
+            // меняем данные товара (в корзине или нет)
+            getProduct((Integer) buttonView.getTag()).box = isChecked;
+        }
+    };
+}
+
+--
+
+
+package com.example.barsukpr18;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class DB {
+
+    private static final String DB_NAME = "mydb";
+    private static final int DB_VERSION = 1;
+    private static final String DB_TABLE = "mytab";
+
+    public static final String COLUMN_ID = "_id";
+    public static final String COLUMN_IMG = "img";
+    public static final String COLUMN_TXT = "txt";
+
+    private static final String DB_CREATE =
+            "create table " + DB_TABLE + "(" +
+                    COLUMN_ID + " integer primary key autoincrement, " +
+                    COLUMN_IMG + " integer, " +
+                    COLUMN_TXT + " text" +
+                    ");";
+
+    private final Context mCtx;
+
+
+    private DBHelper mDBHelper;
+    private SQLiteDatabase mDB;
+
+    public DB(Context ctx) {
+        mCtx = ctx;
+    }
+
+    // открыть подключение
+    public void open() {
+        mDBHelper = new DBHelper(mCtx, DB_NAME, null, DB_VERSION);
+        mDB = mDBHelper.getWritableDatabase();
+    }
+
+    // закрыть подключение
+    public void close() {
+        if (mDBHelper!=null) mDBHelper.close();
+    }
+
+    // получить все данные из таблицы DB_TABLE
+    public Cursor getAllData() {
+        return mDB.query(DB_TABLE, null, null, null, null, null, null);
+    }
+
+    // добавить запись в DB_TABLE
+    public void addRec(String txt, int img) {
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_TXT, txt);
+        cv.put(COLUMN_IMG, img);
+        mDB.insert(DB_TABLE, null, cv);
+    }
+
+    // удалить запись из DB_TABLE
+    public void delRec(long id) {
+        mDB.delete(DB_TABLE, COLUMN_ID + " = " + id, null);
+    }
+
+    // класс по созданию и управлению БД
+    private class DBHelper extends SQLiteOpenHelper {
+
+        public DBHelper(Context context, String name, CursorFactory factory,
+                        int version) {
+            super(context, name, factory, version);
+        }
+
+        // создаем и заполняем БД
+        @Override
+        public void onCreate(SQLiteDatabase db) {
+            db.execSQL(DB_CREATE);
+
+            ContentValues cv = new ContentValues();
+            for (int i = 1; i < 5; i++) {
+                cv.put(COLUMN_TXT, "sometext " + i);
+                cv.put(COLUMN_IMG, R.mipmap.another_handsome_man_foreground);
+                db.insert(DB_TABLE, null, cv);
+            }
+        }
+
+        @Override
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        }
+    }
+}
+
+--
+
+package com.example.barsukpr18;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class DB2 {
+
+    private static final String DB_NAME = "mydb2";
+    private static final int DB_VERSION = 1;
+
+    // имя таблицы компаний, поля и запрос создания
+    private static final String COMPANY_TABLE = "company";
+    public static final String COMPANY_COLUMN_ID = "_id";
+    public static final String COMPANY_COLUMN_NAME = "name";
+    private static final String COMPANY_TABLE_CREATE = "create table "
+            + COMPANY_TABLE + "(" + COMPANY_COLUMN_ID
+            + " integer primary key, " + COMPANY_COLUMN_NAME + " text" + ");";
+
+    // имя таблицы телефонов, поля и запрос создания
+    private static final String PHONE_TABLE = "phone";
+    public static final String PHONE_COLUMN_ID = "_id";
+    public static final String PHONE_COLUMN_NAME = "name";
+    public static final String PHONE_COLUMN_COMPANY = "company";
+    private static final String PHONE_TABLE_CREATE = "create table "
+            + PHONE_TABLE + "(" + PHONE_COLUMN_ID
+            + " integer primary key autoincrement, " + PHONE_COLUMN_NAME
+            + " text, " + PHONE_COLUMN_COMPANY + " integer" + ");";
+
+    private final Context mCtx;
+
+    private DBHelper mDBHelper;
+    private SQLiteDatabase mDB;
+
+    public DB2(Context ctx) {
+        mCtx = ctx;
+    }
+
+    // открываем подключение
+    public void open() {
+        mDBHelper = new DBHelper(mCtx, DB_NAME, null, DB_VERSION);
+        mDB = mDBHelper.getWritableDatabase();
+    }
+
+    // закрываем подключение
+    public void close() {
+        if (mDBHelper != null)
+            mDBHelper.close();
+    }
+
+    // данные по компаниям
+    public Cursor getCompanyData() {
+        return mDB.query(COMPANY_TABLE, null, null, null, null, null, null);
+    }
+
+    // данные по телефонам конкретной группы
+    public Cursor getPhoneData(long companyID) {
+        return mDB.query(PHONE_TABLE, null, PHONE_COLUMN_COMPANY + " = "
+                + companyID, null, null, null, null);
+    }
+
+    private class DBHelper extends SQLiteOpenHelper {
+
+        public DBHelper(Context context, String name, CursorFactory factory,
+                        int version) {
+            super(context, name, factory, version);
+        }
+
+        @Override
+        public void onCreate(SQLiteDatabase db) {
+            ContentValues cv = new ContentValues();
+
+            // названия компаний (групп)
+            String[] companies = new String[] { "HTC", "Samsung", "LG" };
+
+            // создаем и заполняем таблицу компаний
+            db.execSQL(COMPANY_TABLE_CREATE);
+            for (int i = 0; i < companies.length; i++) {
+                cv.put(COMPANY_COLUMN_ID, i + 1);
+                cv.put(COMPANY_COLUMN_NAME, companies[i]);
+                db.insert(COMPANY_TABLE, null, cv);
+            }
+
+            // названия телефонов (элементов)
+            String[] phonesHTC = new String[] { "Sensation", "Desire",
+                    "Wildfire", "Hero" };
+            String[] phonesSams = new String[] { "Galaxy S II", "Galaxy Nexus",
+                    "Wave" };
+            String[] phonesLG = new String[] { "Optimus", "Optimus Link",
+                    "Optimus Black", "Optimus One" };
+
+            // создаем и заполняем таблицу телефонов
+            db.execSQL(PHONE_TABLE_CREATE);
+            cv.clear();
+            for (int i = 0; i < phonesHTC.length; i++) {
+                cv.put(PHONE_COLUMN_COMPANY, 1);
+                cv.put(PHONE_COLUMN_NAME, phonesHTC[i]);
+                db.insert(PHONE_TABLE, null, cv);
+            }
+            for (int i = 0; i < phonesSams.length; i++) {
+                cv.put(PHONE_COLUMN_COMPANY, 2);
+                cv.put(PHONE_COLUMN_NAME, phonesSams[i]);
+                db.insert(PHONE_TABLE, null, cv);
+            }
+            for (int i = 0; i < phonesLG.length; i++) {
+                cv.put(PHONE_COLUMN_COMPANY, 3);
+                cv.put(PHONE_COLUMN_NAME, phonesLG[i]);
+                db.insert(PHONE_TABLE, null, cv);
+            }
+        }
+
+        @Override
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        }
+    }
+
+}
+
+--
+
+
+
+package com.example.barsukpr18;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    Button button1, button2, button3, button4, button5, button6, button7;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        button1 = findViewById(R.id.button1);
+        button2 = findViewById(R.id.button2);
+        button3 = findViewById(R.id.button3);
+        button4 = findViewById(R.id.button4);
+        button5 = findViewById(R.id.button5);
+        button6 = findViewById(R.id.button6);
+        button7 = findViewById(R.id.button7);
+
+        button1.setOnClickListener(this);
+        button2.setOnClickListener(this);
+        button3.setOnClickListener(this);
+        button4.setOnClickListener(this);
+        button5.setOnClickListener(this);
+        button6.setOnClickListener(this);
+        button7.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent;
+        if (v.getId() == R.id.button1) {
+            intent = new Intent(MainActivity.this, Activity1.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.button2) {
+            intent = new Intent(MainActivity.this, Activity2.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.button3) {
+            intent = new Intent(MainActivity.this, Activity3.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.button4) {
+            intent = new Intent(MainActivity.this, Activity4.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.button5) {
+            intent = new Intent(MainActivity.this, Activity5.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.button6) {
+            intent = new Intent(MainActivity.this, Activity6.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.button7) {
+            intent = new Intent(MainActivity.this, Activity7.class);
+            startActivity(intent);
+        }
+    }
+}
+
+--
+
+package com.example.barsukpr18;
+
+public class Product {
+
+    String name;
+    int price;
+    int image;
+    boolean box;
+
+
+    Product(String _describe, int _price, int _image, boolean _box) {
+        name = _describe;
+        price = _price;
+        image = _image;
+        box = _box;
+    }
+}

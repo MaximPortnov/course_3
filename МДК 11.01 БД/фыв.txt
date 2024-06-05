@@ -1,0 +1,48 @@
+USE [BD]
+GO
+/*query*/
+SELECT * FROM Grupu;
+
+/*query*/
+INSERT INTO [dbo].[Grupu] ([Kod_grupu],[Kod_kafedru],[N_grupu],[God_post],[Kurs])
+     VALUES (6,5,65,54,1)
+
+SELECT * FROM Grupu;
+
+/*query*/
+UPDATE [dbo].[Grupu]
+   SET [Kurs] = 2
+ WHERE Grupu.Kod_grupu = 6
+
+SELECT * FROM Grupu;
+
+/*query*/
+DELETE FROM [dbo].[Grupu]
+      WHERE Grupu.Kod_grupu = 6
+
+SELECT * FROM Grupu;
+
+/*query*/
+SELECT * FROM Kafedra;
+
+/*query*/
+SELECT * FROM Vedomosti WHERE Kod_vedomopsti in (1,2,3);
+
+/*query*/
+SELECT * FROM Fakulteti WHERE Fakulteti.FIO LIKE '%Пет%'
+
+/*query*/
+SELECT * FROM Podchinennaya_tablica_vedomosti WHERE Osenka BETWEEN 80 and 90 
+
+/*query*/
+SELECT Students.FIO, Grupu.Kurs FROM Students 
+JOIN Grupu ON Students.Kod_grupu =Grupu.Kod_grupu
+
+/*query*/
+SELECT * from Podchinennaya_tablica_vedomosti
+JOIN Vedomosti ON Vedomosti.Kod_vedomopsti = Podchinennaya_tablica_vedomosti.Kod_vedomopsti
+JOIN Students ON Students.Kod_studenta = Podchinennaya_tablica_vedomosti.Kod_studenta 
+
+GO
+
+

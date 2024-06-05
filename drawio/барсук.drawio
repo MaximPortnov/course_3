@@ -1,0 +1,365 @@
+<mxfile host="app.diagrams.net" modified="2024-05-15T04:18:28.014Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="zbNfC6Ep4h6_WKA4ZTtw" version="24.2.3" type="device">
+  <diagram name="Page-1" id="zLmyoIpmJVHUcAZrCPEF">
+    <mxGraphModel dx="2577" dy="942" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-2" value="Стул" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-46" y="560" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-3" value="Beta Testing" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-206" y="364" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-4" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ayt-NKKJ8DqNS6aPPXxj-2" target="ayt-NKKJ8DqNS6aPPXxj-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-146" y="540" as="sourcePoint" />
+            <mxPoint x="-96" y="490" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-46" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-5" value="Раздача пользователям для проверки в реальных условиях." style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-555" y="340" width="349" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-6" value="Сбор отзывов о недостатках." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-383" y="360" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-8" value="Automated Testing" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-236" y="440" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-9" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="ayt-NKKJ8DqNS6aPPXxj-8" source="ayt-NKKJ8DqNS6aPPXxj-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-46" y="636" as="sourcePoint" />
+            <mxPoint x="-96" y="566" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-46" y="506" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-10" value="Автоматическая нагрузка на стул." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-436" y="420" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-12" value="Роботы для тестирования устойчивости." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-471" y="440" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-13" value="Проверка прочности материалов с помощью автоматических машин." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-631" y="401" width="420" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-14" value="Validation" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-236" y="505" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-15" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="ayt-NKKJ8DqNS6aPPXxj-14" source="ayt-NKKJ8DqNS6aPPXxj-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-46" y="635" as="sourcePoint" />
+            <mxPoint x="-96" y="631" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-46" y="571" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-16" value="Удобство использования зимой и летом." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-470" y="489" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-17" value="Удобство в различных условиях (дом, офис, улица)." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-535" y="505" width="320" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-18" value="Проверка на устойчивость к тряске (например, в поезде)" style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-563" y="523" width="350" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-19" value="Verification" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-236" y="580" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-20" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="ayt-NKKJ8DqNS6aPPXxj-19">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-46" y="580" as="sourcePoint" />
+            <mxPoint x="-96" y="706" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-46" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-21" value="Соответствие размеров и углов." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-422" y="565" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-22" value="Проверка длины и толщины ножек." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-440" y="580" width="230" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-23" value="Проверка твердости и прочности материалов." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-497" y="595" width="290" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-24" value="Security Testing" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-236" y="644" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-25" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="ayt-NKKJ8DqNS6aPPXxj-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-46" y="580" as="sourcePoint" />
+            <mxPoint x="-96" y="766" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-46" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-27" value="Безопасность для глаз (острые углы и элементы)." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-516" y="629" width="310" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-28" value="Нет ли опасности при проглатывании мелких деталей." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-543" y="648" width="340" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-29" value="Negative&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;Testing&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-236" y="708" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-30" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="ayt-NKKJ8DqNS6aPPXxj-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-46" y="580" as="sourcePoint" />
+            <mxPoint x="-96" y="830" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-46" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-31" value="Намочить и высушить стул, проверить, не растрескается ли." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-580" y="688" width="370" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-32" value="Попытаться сломать, уронить, ударить по столу." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-512" y="704" width="300" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-33" value="&lt;span style=&quot;background-color: initial;&quot;&gt;Stress Testing&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-236" y="757" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-34" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" target="ayt-NKKJ8DqNS6aPPXxj-33" source="ayt-NKKJ8DqNS6aPPXxj-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-46" y="629" as="sourcePoint" />
+            <mxPoint x="-96" y="879" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-46" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-35" value="Прыжки на стул." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-333" y="744" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-37" value="Удары и падения" style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-339" y="757" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-38" value="Попытки согнуть стул." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-365" y="771" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-39" value="UI Testing" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="364" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-40" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="ayt-NKKJ8DqNS6aPPXxj-39" source="ayt-NKKJ8DqNS6aPPXxj-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-32" y="600" as="sourcePoint" />
+            <mxPoint x="74" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint y="490" />
+              <mxPoint x="10" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-41" value="Эстетичность дизайна." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="156" y="340" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-43" value="Подходит ли под интерьер." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="156" y="354" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-44" value="Удобство формы сиденья." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="156" y="370" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-45" value="Entry Point Testing" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="421" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-46" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="ayt-NKKJ8DqNS6aPPXxj-45" source="ayt-NKKJ8DqNS6aPPXxj-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-6" y="615.5" as="sourcePoint" />
+            <mxPoint x="74" y="460.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint y="540.5" />
+              <mxPoint x="10" y="460.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-47" value="Легкость сборки." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="156" y="403" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-48" value="Понятность инструкции по сборке." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="156" y="418" width="230" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-50" value="Полнота комплектации." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="156" y="433" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-51" value="&lt;span style=&quot;background-color: initial;&quot;&gt;Documentation Testing&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-250" y="841" width="124" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-52" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="ayt-NKKJ8DqNS6aPPXxj-51">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-40" y="580" as="sourcePoint" />
+            <mxPoint x="-96" y="963" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-40" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-53" value="Наличие инструкции по сборке и использованию." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-528" y="821" width="310" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-54" value="Правильность указанных размеров и характеристик." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-548" y="834" width="330" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-55" value="Наличие и условия гарантии." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-417" y="850" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-56" value="Balck Box Testing" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="46" y="473" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-57" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="ayt-NKKJ8DqNS6aPPXxj-56">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-10" y="570" as="sourcePoint" />
+            <mxPoint x="80" y="512.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="6" y="570" />
+              <mxPoint x="10" y="540" />
+              <mxPoint x="16" y="512.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-59" value="Проверка функциональности стула как есть." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="156" y="458" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-61" value="Устойчивость и удобство без анализа конструкции." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="157" y="475" width="320" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-62" value="Functional Testing" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="46" y="529" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-63" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" target="ayt-NKKJ8DqNS6aPPXxj-62" source="ayt-NKKJ8DqNS6aPPXxj-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-6" y="605" as="sourcePoint" />
+            <mxPoint x="84" y="547.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="14" y="575" />
+              <mxPoint x="20" y="547.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-64" value="Устойчивость." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="156" y="515" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-65" value="Удобство." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="157" y="529" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-67" value="Равномерность высоты ножек." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="157" y="545" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-68" value="Usability Testing" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="47" y="585" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-69" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="ayt-NKKJ8DqNS6aPPXxj-68">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-5" y="570" as="sourcePoint" />
+            <mxPoint x="85" y="603.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="15" y="590" />
+              <mxPoint x="21" y="603.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-70" value="Удобство сидения." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="156" y="570" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-72" value="Отсутствие скрипа." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="157" y="585" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-73" value="Подход для длительного использования." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="157" y="600" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-75" value="Compability Testing" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="640" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-76" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" target="ayt-NKKJ8DqNS6aPPXxj-75" source="ayt-NKKJ8DqNS6aPPXxj-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-12" y="625" as="sourcePoint" />
+            <mxPoint x="78" y="658.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="8" y="645" />
+              <mxPoint x="14" y="658.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-77" value="Совместимость с разными покрытиями пола." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="151" y="625" width="290" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-78" value="Совместимость с разными столами." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="152" y="639" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-80" value="Соответствие стандартам эргономики." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="152" y="653" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-81" value="Perfomance Testing" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="42" y="713" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-82" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.908;exitY=1.057;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="ayt-NKKJ8DqNS6aPPXxj-81" source="ayt-NKKJ8DqNS6aPPXxj-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-4" y="653" as="sourcePoint" />
+            <mxPoint x="80" y="731.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="10" y="718" />
+              <mxPoint x="16" y="731.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-83" value="Нагрузка до 100 кг." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="152" y="698" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-85" value="Поведение при различных температурах." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="152" y="714" width="270" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-86" value="Component Testing" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="41" y="776" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-87" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" target="ayt-NKKJ8DqNS6aPPXxj-86" source="ayt-NKKJ8DqNS6aPPXxj-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-11" y="644" as="sourcePoint" />
+            <mxPoint x="79" y="794.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="9" y="781" />
+              <mxPoint x="15" y="794.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-88" value="Прочность ножек." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="152" y="757" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-89" value="Проверка сиденья." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="152" y="772" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-90" value="Проверка спинки." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="152" y="786" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-91" value="Integration Testing" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="42" y="836" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-92" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" target="ayt-NKKJ8DqNS6aPPXxj-91">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-15" y="640" as="sourcePoint" />
+            <mxPoint x="80" y="854.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="10" y="841" />
+              <mxPoint x="16" y="854.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-93" value="Проверка сборки всех компонентов." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="152" y="821" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-95" value="Устойчивость и прочность собранного стула." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="153" y="836" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ayt-NKKJ8DqNS6aPPXxj-96" value="Оценка общей функциональности и удобства." style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="153" y="850" width="290" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

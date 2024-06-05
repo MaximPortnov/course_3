@@ -1,0 +1,65 @@
+﻿<Window x:Class="Pr5Bank.Window4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pr5Bank"
+        mc:Ignorable="d"
+        Title="Window5" Height="430" Width="484">
+    <Window.Resources>
+        <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderThickness" Value="0 0 0 1"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="0 0 0 10"/>
+            <Style.Triggers>
+                <Trigger Property="IsKeyboardFocused" Value="True">
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="PasswordBox" BasedOn="{StaticResource {x:Type PasswordBox}}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderThickness" Value="0 0 0 1"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="0 0 0 10"/>
+            <Style.Triggers>
+                <Trigger Property="IsKeyboardFocused" Value="True">
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Label Content="Рассчитать доход" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="45,10,0,0" FontWeight="SemiBold"/>
+        <Label Content="Сумма" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="10,60,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="29" Margin="10,99,0,0" Stroke="#43739e" VerticalAlignment="Top" Width="233"/>
+        <Label Content="600 000" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="10,94,0,0"/>
+        <Label Content="Руб." HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="200,94,0,0"/>
+        <Slider HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top" Width="233" />
+        <Label Content="Срок" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="10,168,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="29" Margin="10,207,0,0" Stroke="#43739e" VerticalAlignment="Top" Width="233"/>
+        <Label Content="365" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="10,202,0,0"/>
+        <Label Content="дней" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="193,202,0,0"/>
+        <Slider HorizontalAlignment="Left" Margin="10,241,0,0" VerticalAlignment="Top" Width="233"/>
+        <Label Content="Ежемесячное пополнение" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="10,290,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="29" Margin="10,329,0,0" Stroke="#43739e" VerticalAlignment="Top" Width="233"/>
+        <Label Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="10,324,0,0"/>
+        <Label Content="Руб." HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="200,324,0,0"/>
+        <Slider HorizontalAlignment="Left" Margin="10,363,0,0" VerticalAlignment="Top" Width="233"/>
+        <Rectangle HorizontalAlignment="Left" Height="360" Margin="265,44,0,0" Stroke="Black" VerticalAlignment="Top" Width="204"/>
+        <Label Content="Стабильный" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="19" Margin="283,59,0,0" FontWeight="SemiBold"/>
+        <Label Content="Доход:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Margin="283,85,0,0"/>
+        <TextBox x:Name="UsernameTextBox" Text="45 845 Руб." HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Margin="287,106,0,0" FontSize="16" Height="28"/>
+        <Label Content="Оптимальный" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="19" Margin="283,155,0,0" FontWeight="SemiBold"/>
+        <Label Content="Доход:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Margin="283,181,0,0"/>
+        <TextBox x:Name="UsernameTextBox_Копировать" Text="37 641 Руб." HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Margin="287,203,0,0" FontSize="16" />
+        <Label Content="Стандарт" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="19" Margin="283,259,0,0" FontWeight="SemiBold"/>
+        <Label Content="Доход по вкладу:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Margin="283,285,0,0"/>
+        <TextBox x:Name="UsernameTextBox_Копировать1" Text="40 502 Руб." HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Margin="287,307,0,0" FontSize="16" />
+        <Button Content="Сравнить параметры" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Margin="302,363,0,0" Background="#FF2C7DE0" Foreground="White" Width="130"/>
+        <Image Margin="242,9,2,375" Source="/Image2.png" Stretch="Fill"/>
+    </Grid>
+</Window>

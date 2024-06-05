@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">sr7</string>
+    <string-array name="genders_array">
+        <item>Мужской</item>
+        <item>Женский</item>
+    </string-array>
+    <string name="title_activity_amain">AMainActivity</string>
+    <string name="title_home">Анализы</string>
+    <string name="title_dashboard">Результаты</string>
+    <string name="title_notifications">Поддержка</string>
+    <string name="profile">Профиль</string>
+    <string name="Add_btn">Добавить</string>
+    <string name="rubles">₽</string>
+    <string name="days">Дня</string>
+</resources>

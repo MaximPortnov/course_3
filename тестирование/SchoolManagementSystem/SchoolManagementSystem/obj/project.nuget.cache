@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "TmrrN7VGmZwy3mgY62k2BvR+CY3yPNQVqblq+IGCPuxXvsDj9r50b0V8TU3/7F3BUzmI/I8UJSsm/+gNu0etFQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Kyrich\\Desktop\\practice\\SchoolManagementSystem\\SchoolManagementSystem\\SchoolManagementSystem.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Kyrich\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

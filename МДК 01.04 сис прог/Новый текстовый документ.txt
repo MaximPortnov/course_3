@@ -1,0 +1,120 @@
+from aiohttp import web
+from aiortc import RTCPeerConnection, RTCSessionDescription
+
+async def index(request):
+    content = open('index.html', 'r').read()  # Подставьте ваш HTML-файл с кодом JavaScript для WebRTC
+    return web.Response(content_type='text/html', text=content)
+
+async def offer(request):
+    params = await request.json()
+    offer = RTCSessionDescription(sdp=params['sdp'], type=params['type'])
+
+    pc = RTCPeerConnection()
+
+    @pc.on('track')
+    def on_track(track):
+        @track.on('ended')
+        def on_ended():
+            print('Track ended')
+
+        # Отправить видео на другой конец соединения
+        print('Track received:', track.kind)
+
+    await pc.setRemoteDescription(offer)
+    answer = await pc.createAnswer()
+    await pc.setLocalDescription(answer)
+
+    return web.Response(content_type='application/json', text=answer.sdp)
+
+app = web.Application()
+app.router.add_get('/', index)
+app.router.add_static('/static/', path='static', name='static')
+app.router.add_post('/offer', offer)
+
+if __name__ == '__main__':
+    web.run_app(app)
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebRTC Video Stream</title>
+    <script>
+        let pc = new RTCPeerConnection();
+
+        async function start() {
+            let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+            let video = document.querySelector('video');
+            video.srcObject = stream;
+
+            stream.getTracks().forEach(track => pc.addTrack(track, stream));
+
+            let offer = await pc.createOffer();
+            await pc.setLocalDescription(offer);
+
+            let response = await fetch('/offer', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    sdp: pc.localDescription.sdp,
+                    type: pc.localDescription.type
+                })
+            });
+
+            let answer = await response.json();
+            await pc.setRemoteDescription({ type: 'answer', sdp: answer });
+
+            console.log('Connection established.');
+        }
+
+        start();
+    </script>
+</head>
+<body>
+    <video autoplay></video>
+</body>
+</html>
+
+<!-- ------------------------------------------------ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebRTC Video Stream</title>
+    <script>
+        let pc = new RTCPeerConnection();
+
+        async function start() {
+            let video = document.querySelector('video');
+            let stream = video.captureStream(); // Захват видео из тега <video>
+
+            stream.getTracks().forEach(track => pc.addTrack(track, stream));
+
+            let offer = await pc.createOffer();
+            await pc.setLocalDescription(offer);
+
+            let response = await fetch('/offer', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    sdp: pc.localDescription.sdp,
+                    type: pc.localDescription.type
+                })
+            });
+
+            let answer = await response.json();
+            await pc.setRemoteDescription({ type: 'answer', sdp: answer });
+
+            console.log('Connection established.');
+        }
+    </script>
+</head>
+<body>
+    <video controls autoplay width="1280" height="720">
+    <source src="/static/ds3.mp4" type="video/mp4">
+</video>
+    <script>start();</script>
+</body>
+</html>

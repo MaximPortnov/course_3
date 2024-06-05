@@ -1,0 +1,135 @@
+﻿<Window x:Class="AmonicAirlines.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AmonicAirlines"
+        mc:Ignorable="d"
+        Title="Window1" Height="658" Width="800">
+    <Grid>
+        <GroupBox Header="Filter by" Margin="15,15,15,0" Height="112" VerticalAlignment="Top">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Label Content="From" Height="29" VerticalAlignment="Center"/>
+                        <ComboBox Name="FromBox" Width="126" Height="18" Margin="5" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="1">
+                        <Label Content="To" Height="28" VerticalAlignment="Center" Margin="5"/>
+                        <ComboBox Name="ToBox" Width="114" Height="18" Margin="5"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2">
+                        <Label Content="Cabin Type" Height="28" VerticalAlignment="Center" Margin="5"/>
+                        <ComboBox Name="CabinBox" Width="114" Height="18" Margin="5"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1" Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel HorizontalAlignment="left" Orientation="Horizontal">
+                        <RadioButton Content="Return" Height="18" Margin="0,0,15,0"/>
+                        <RadioButton Content="One way" Height="18" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Left" Orientation="Horizontal">
+                        <Label Content="Outbound" Height="28"/>
+                        <TextBox Width="120" Height="18" RenderTransformOrigin="0.5,0.5">
+                            <TextBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="0.046"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBox.RenderTransform>
+                        </TextBox>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,0,10,0">
+                        <Label Content="Return" Height="28" VerticalAlignment="Center"/>
+                        <TextBox Width="109" Height="18" />
+                        <Button Content="Apply" Height="20" Margin="10,0,0,0" Width="60"/>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+        </GroupBox>
+
+        <Grid Margin="15,130,15,100">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid  Grid.Row="0" >
+                <Label Content="Outbound flight details:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <CheckBox Content="Display three days before and after" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            </Grid>
+            <DataGrid 
+            x:Name="dataGrid" AutoGenerateColumns="False" 
+            Grid.Row="1" ColumnWidth="*" 
+            CanUserAddRows="False" >
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="From"  Width="50" Binding="{Binding From}"/>
+                    <DataGridTextColumn Header="To"  Width="50" Binding="{Binding To}"/>
+                    <DataGridTextColumn Header="Date"  Width="110" Binding="{Binding Date}"/>
+                    <DataGridTextColumn Header="Time"  Width="50" Binding="{Binding Time}"/>
+                    <DataGridTextColumn Header="Flight Number(s)"  Width="130" Binding="{Binding FlightNumbers}"/>
+                    <DataGridTextColumn Header="Cabin price" Width="100" Binding="{Binding CabinPrice}" />
+                    <DataGridTextColumn Header="Number of stops"  Width="*" Binding="{Binding NumberOfStops}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Grid.Row="2" >
+                <Label Content="Return flight details:" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <CheckBox Content="Display three days before and after" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+
+            </Grid>
+            <DataGrid Grid.Row="3" x:Name="dataGrid1" AutoGenerateColumns="False" ColumnWidth="*" 
+            CanUserAddRows="False" >
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="From"  Width="50" Binding="{Binding From}"/>
+                    <DataGridTextColumn Header="To"  Width="50" Binding="{Binding To}"/>
+                    <DataGridTextColumn Header="Date"  Width="110" Binding="{Binding Date}"/>
+                    <DataGridTextColumn Header="Time"  Width="50" Binding="{Binding Time}"/>
+                    <DataGridTextColumn Header="Flight Number(s)"  Width="130" Binding="{Binding FlightNumbers}"/>
+                    <DataGridTextColumn Header="Cabin price" Width="100" Binding="{Binding CabinPrice}" />
+                    <DataGridTextColumn Header="Number of stops"  Width="*" Binding="{Binding NumberOfStops}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+
+
+
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="620,0,0,15" VerticalAlignment="Bottom" Width="45"/>
+        <GroupBox Header="Confirm bocking for" Margin="158,0,149,10"
+              VerticalAlignment="Bottom">
+            <StackPanel Orientation="Vertical" Height="53">
+
+                <StackPanel Orientation="Horizontal" Height="39">
+                    <TextBox MaxLength="3" Width="49" Height="22"/>
+                    <Label Content="Passengers" Width="213"  Height="28"/>
+                    <Button Content="Bookflight" Width="93"  Height="24"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>

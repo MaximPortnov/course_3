@@ -1,0 +1,78 @@
+﻿<Page x:Class="AmonicAirlines.ses3_2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AmonicAirlines"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="566" d:DesignWidth="689"
+      Title="ses3_2">
+
+    <Grid>
+        <GroupBox Header="Outbound flight details" Margin="10,10,10,472">
+            <StackPanel Orientation="Horizontal" Height="34">
+                <Label Content="From:" Width="97"/>
+                <Label Content="To:" Width="74"/>
+                <Label Content="Cabin Type:" Width="142"/>
+                <Label Content="Date:" Width="118"/>
+                <Label Content="Flight number:" Width="127"/>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="Return flight details" Margin="10,95,10,387">
+            <StackPanel Orientation="Horizontal" Height="34">
+                <Label Content="From:" Width="97"/>
+                <Label Content="To:" Width="74"/>
+                <Label Content="Cabin Type:" Width="142"/>
+                <Label Content="Date:" Width="118"/>
+                <Label Content="Flight number:" Width="127"/>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="Passenger details" Margin="10,185,10,230">
+            <StackPanel Orientation="Vertical" Height="129">
+
+                <StackPanel Orientation="Horizontal" Height="39">
+                    <Label Content="Firstname" Width="70" Height="29"/>
+                    <TextBox Width="126" Height="18"/>
+                    <Label Content="              Lastname" Width="106"  Height="28"/>
+                    <TextBox Width="114" Height="18"/>
+                    <Label Content="          Birthdate" Width="94"  Height="28"/>
+                    <TextBox Name="BirthdateBox" Width="114" Height="18" PreviewTextInput="OutboundTextBox_PreviewTextInput" TextChanged="OutboundTextBox_TextChanged"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="43" RenderTransformOrigin="0.502,0.732">
+                    <Label Content="Passport number;" Width="99" Height="29"/>
+                    <TextBox Width="96" Height="18"/>
+                    <Label Content="Passport country" Width="106"  Height="28"/>
+                    <ComboBox Name="CountryBox" Width="114" Height="18"/>
+                    <Label Content="          Phone" Width="94"  Height="28"/>
+                    <TextBox Name="PhoneTextBox" Width="116" Height="18"/>
+                </StackPanel>
+                <StackPanel  HorizontalAlignment="Right" Orientation="Horizontal" Height="24" RenderTransformOrigin="0.502,0.732">
+                    <Button Content="Add passenger" Height="20" Width="108"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <DataGrid x:Name="dataGrid1" AutoGenerateColumns="False" Height="139" Margin="0,353,0,0" ColumnWidth="*" 
+            VerticalAlignment="Top" 
+            CanUserAddRows="False" HorizontalAlignment="Center" Width="660"
+  >
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="From"  Width="50" Binding="{Binding From}"/>
+                <DataGridTextColumn Header="To"  Width="50" Binding="{Binding To}"/>
+                <DataGridTextColumn Header="Date"  Width="110" Binding="{Binding Date}"/>
+                <DataGridTextColumn Header="Time"  Width="50" Binding="{Binding Time}"/>
+                <DataGridTextColumn Header="Flight Number(s)"  Width="130" Binding="{Binding FlightNumbers}"/>
+                <DataGridTextColumn Header="Cabin price" Width="100" Binding="{Binding CabinPrice}" />
+                <DataGridTextColumn Header="Number of stops"  Width="*" Binding="{Binding NumberOfStops}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Passenger list" HorizontalAlignment="Left" Margin="10,327,0,0" VerticalAlignment="Top"/>
+        <Button Content="Remove passenger" HorizontalAlignment="Left" Margin="563,497,0,0" VerticalAlignment="Top" Width="111"/>
+        <Button Content="Back to search for flights" HorizontalAlignment="Left" Margin="208,520,0,0" VerticalAlignment="Top" Width="148"/>
+        <Button Content="Confirm booking" HorizontalAlignment="Left" Margin="371,520,0,0" VerticalAlignment="Top" Width="110"/>
+
+
+    </Grid>
+</Page>

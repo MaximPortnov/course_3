@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "0zpCB2P5YVHvLyPHT5qAm4FwWo4ToLSKWYfu3FYA3eWZOsE5rGEkXpe9xsXscVDHzLzXLG0GxKqFWRo2ZHM1dA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\portm\\Desktop\\srs5\\UnitTestProject1\\UnitTestProject1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\portm\\.nuget\\packages\\mstest.testadapter\\2.2.10\\mstest.testadapter.2.2.10.nupkg.sha512",
+    "C:\\Users\\portm\\.nuget\\packages\\mstest.testframework\\2.2.10\\mstest.testframework.2.2.10.nupkg.sha512"
+  ],
+  "logs": []
+}

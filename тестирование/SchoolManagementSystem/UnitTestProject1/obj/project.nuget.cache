@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "xM2ihl/ZPJ9LyqINCAeBycmLi41g8jQKL0X1+J7nmr1EGH5nYYStlqUAYbbSO1WwPspBFidQy0gql8e9nNokfg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Kyrich\\Desktop\\practice\\SchoolManagementSystem\\UnitTestProject1\\UnitTestProject1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Kyrich\\.nuget\\packages\\mstest.testadapter\\2.2.10\\mstest.testadapter.2.2.10.nupkg.sha512",
+    "C:\\Users\\Kyrich\\.nuget\\packages\\mstest.testframework\\2.2.10\\mstest.testframework.2.2.10.nupkg.sha512",
+    "C:\\Users\\Kyrich\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

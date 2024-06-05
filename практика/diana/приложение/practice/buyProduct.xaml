@@ -1,0 +1,41 @@
+﻿<Window x:Class="practice.buyProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:practice"
+        mc:Ignorable="d"
+        Title="buyProduct" Height="450" Width="800">
+    <Grid>
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <DataGrid Grid.Row="0" x:Name="dataGrid" AutoGenerateColumns="False" ItemsSource="{Binding Products}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Product ID" Binding="{Binding ProductID}"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Sport Type" Binding="{Binding SportType}"/>
+                    <DataGridTextColumn Header="Characteristics" Binding="{Binding Characteristics}"/>
+                    <DataGridTextColumn Header="Price" Binding="{Binding Price}"/>
+                    <DataGridTemplateColumn Header="Quantity">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBox_LostFocus"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" x:Name="btn_buy" Content="buy" Click="btn_buy_Click" />
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Window>

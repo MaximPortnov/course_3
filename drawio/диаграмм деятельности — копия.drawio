@@ -1,0 +1,342 @@
+<mxfile host="app.diagrams.net" modified="2024-03-29T06:03:47.476Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="P65a8JCswV5hqTM3bETw" version="24.2.0" type="device">
+  <diagram name="Страница — 1" id="fsm5WZ1MSx0vYcQyWfyi">
+    <mxGraphModel dx="2171" dy="1124" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+    
+    <mxCell id="f-1" value="Products" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+    <mxGeometry x="20" y="30" width="140" height="120" as="geometry" />
+    </mxCell>
+    
+
+<mxCell id="fh-11" value="ProductID SERIAL PRIMARY KEY" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-1" vertex="1">
+  <mxGeometry y="30" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-12" value="Name VARCHAR(255) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-1" vertex="1">
+  <mxGeometry y="60" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-13" value="SportType VARCHAR(100)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-1" vertex="1">
+  <mxGeometry y="90" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-14" value="Characteristics TEXT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-1" vertex="1">
+  <mxGeometry y="120" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-15" value="Price DECIMAL(10, 2) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-1" vertex="1">
+  <mxGeometry y="150" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-16" value="QuantityInStock INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-1" vertex="1">
+  <mxGeometry y="180" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+    <mxCell id="f-2" value="Suppliers" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+    <mxGeometry x="20" y="30" width="140" height="120" as="geometry" />
+    </mxCell>
+    
+
+<mxCell id="fh-27" value="SupplierID SERIAL PRIMARY KEY" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-2" vertex="1">
+  <mxGeometry y="30" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-28" value="CompanyName VARCHAR(255) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-2" vertex="1">
+  <mxGeometry y="60" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-29" value="Address TEXT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-2" vertex="1">
+  <mxGeometry y="90" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-210" value="Phone VARCHAR(20)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-2" vertex="1">
+  <mxGeometry y="120" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-211" value="SupplyConditions TEXT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-2" vertex="1">
+  <mxGeometry y="150" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+    <mxCell id="f-3" value="Customers" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+    <mxGeometry x="20" y="30" width="140" height="120" as="geometry" />
+    </mxCell>
+    
+
+<mxCell id="fh-312" value="CustomerID SERIAL PRIMARY KEY" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-3" vertex="1">
+  <mxGeometry y="30" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-313" value="FullName VARCHAR(255) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-3" vertex="1">
+  <mxGeometry y="60" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-314" value="ContactInfo TEXT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-3" vertex="1">
+  <mxGeometry y="90" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-315" value="Email VARCHAR(100)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-3" vertex="1">
+  <mxGeometry y="120" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+    <mxCell id="f-4" value="Orders" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+    <mxGeometry x="20" y="30" width="140" height="120" as="geometry" />
+    </mxCell>
+    
+
+<mxCell id="fh-416" value="OrderID SERIAL PRIMARY KEY" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-4" vertex="1">
+  <mxGeometry y="30" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-417" value="OrderDate DATE NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-4" vertex="1">
+  <mxGeometry y="60" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-418" value="DeliveryDate DATE" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-4" vertex="1">
+  <mxGeometry y="90" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-419" value="Status VARCHAR(50)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-4" vertex="1">
+  <mxGeometry y="120" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-420" value="CustomerID INT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-4" vertex="1">
+  <mxGeometry y="150" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+    <mxCell id="f-5" value="OrderDetails" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+    <mxGeometry x="20" y="30" width="140" height="120" as="geometry" />
+    </mxCell>
+    
+
+<mxCell id="fh-521" value="OrderDetailID SERIAL PRIMARY KEY" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-5" vertex="1">
+  <mxGeometry y="30" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-522" value="OrderID INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-5" vertex="1">
+  <mxGeometry y="60" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-523" value="ProductID INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-5" vertex="1">
+  <mxGeometry y="90" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-524" value="Quantity INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-5" vertex="1">
+  <mxGeometry y="120" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+    <mxCell id="f-6" value="Warehouses" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+    <mxGeometry x="20" y="30" width="140" height="120" as="geometry" />
+    </mxCell>
+    
+
+<mxCell id="fh-625" value="WarehouseID SERIAL PRIMARY KEY" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-6" vertex="1">
+  <mxGeometry y="30" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-626" value="Name VARCHAR(255) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-6" vertex="1">
+  <mxGeometry y="60" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-627" value="Address TEXT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-6" vertex="1">
+  <mxGeometry y="90" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-628" value="Capacity INT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-6" vertex="1">
+  <mxGeometry y="120" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+    <mxCell id="f-7" value="Sales" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+    <mxGeometry x="20" y="30" width="140" height="120" as="geometry" />
+    </mxCell>
+    
+
+<mxCell id="fh-729" value="SaleID SERIAL PRIMARY KEY" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-7" vertex="1">
+  <mxGeometry y="30" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-730" value="ProductID INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-7" vertex="1">
+  <mxGeometry y="60" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-731" value="QuantitySold INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-7" vertex="1">
+  <mxGeometry y="90" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-732" value="SaleDate DATE NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-7" vertex="1">
+  <mxGeometry y="120" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-733" value="CustomerID INT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-7" vertex="1">
+  <mxGeometry y="150" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+    <mxCell id="f-8" value="Finances" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+    <mxGeometry x="20" y="30" width="140" height="120" as="geometry" />
+    </mxCell>
+    
+
+<mxCell id="fh-834" value="FinanceID SERIAL PRIMARY KEY" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-8" vertex="1">
+  <mxGeometry y="30" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-835" value="OperationType VARCHAR(50)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-8" vertex="1">
+  <mxGeometry y="60" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-836" value="Amount DECIMAL(10, 2) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-8" vertex="1">
+  <mxGeometry y="90" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-837" value="OperationDate DATE NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-8" vertex="1">
+  <mxGeometry y="120" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-838" value="Description TEXT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-8" vertex="1">
+  <mxGeometry y="150" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+    <mxCell id="f-9" value="Stock" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+    <mxGeometry x="20" y="30" width="140" height="120" as="geometry" />
+    </mxCell>
+    
+
+<mxCell id="fh-939" value="StockID SERIAL PRIMARY KEY" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-9" vertex="1">
+  <mxGeometry y="30" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-940" value="ProductID INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-9" vertex="1">
+  <mxGeometry y="60" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-941" value="WarehouseID INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-9" vertex="1">
+  <mxGeometry y="90" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-942" value="Quantity INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-9" vertex="1">
+  <mxGeometry y="120" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+    <mxCell id="f-10" value="SupplierProducts" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+    <mxGeometry x="20" y="30" width="140" height="120" as="geometry" />
+    </mxCell>
+    
+
+<mxCell id="fh-1043" value="SupplierProductID SERIAL PRIMARY KEY" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-10" vertex="1">
+  <mxGeometry y="30" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-1044" value="SupplierID INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-10" vertex="1">
+  <mxGeometry y="60" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-1045" value="ProductID INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-10" vertex="1">
+  <mxGeometry y="90" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-1046" value="QuantitySupplied INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-10" vertex="1">
+  <mxGeometry y="120" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-1047" value="SupplyPrice DECIMAL(10, 2) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-10" vertex="1">
+  <mxGeometry y="150" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-1048" value="SupplyDate DATE NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-10" vertex="1">
+  <mxGeometry y="180" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+    <mxCell id="f-11" value="FinanceSupplierProducts" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+    <mxGeometry x="20" y="30" width="140" height="120" as="geometry" />
+    </mxCell>
+    
+
+<mxCell id="fh-1149" value="FinanceSupplierProductID SERIAL PRIMARY KEY" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-11" vertex="1">
+  <mxGeometry y="30" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-1150" value="FinanceID INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-11" vertex="1">
+  <mxGeometry y="60" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-1151" value="SupplierProductID INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-11" vertex="1">
+  <mxGeometry y="90" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+    <mxCell id="f-12" value="FinanceSales" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+    <mxGeometry x="20" y="30" width="140" height="120" as="geometry" />
+    </mxCell>
+    
+
+<mxCell id="fh-1252" value="FinanceSaleID SERIAL PRIMARY KEY" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-12" vertex="1">
+  <mxGeometry y="30" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-1253" value="FinanceID INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-12" vertex="1">
+  <mxGeometry y="60" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+<mxCell id="fh-1254" value="SaleID INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="f-12" vertex="1">
+  <mxGeometry y="90" width="140" height="30" as="geometry" />
+</mxCell>
+        
+
+	
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

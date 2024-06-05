@@ -1,0 +1,34 @@
+﻿<Window x:Class="SchoolManagementSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Main" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Поле поиска и кнопка поиска -->
+        <TextBox x:Name="SearchTextBox" Grid.Row="0" Grid.Column="0" Width="300" Margin="0,0,10,0"/>
+        <Button Content="Search" Grid.Row="0" Grid.Column="1" Click="SearchButton_Click"/>
+
+        <!-- Список сотрудников -->
+        <ListView x:Name="EmployeeListView" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,10,0,10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="200"/>
+                    <GridViewColumn Header="Position" DisplayMemberBinding="{Binding Position}" Width="200"/>
+                    <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="200"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!-- Кнопка добавления сотрудника -->
+        <Button Content="Add Employee" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Click="AddEmployeeButton_Click"/>
+    </Grid>
+</Window>

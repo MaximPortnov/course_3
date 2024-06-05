@@ -1,0 +1,120 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Kyrich\\Desktop\\practice\\SchoolManagementSystem\\UnitTestProject1\\UnitTestProject1.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Kyrich\\Desktop\\practice\\SchoolManagementSystem\\SchoolManagementSystem\\SchoolManagementSystem.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Kyrich\\Desktop\\practice\\SchoolManagementSystem\\SchoolManagementSystem\\SchoolManagementSystem.csproj",
+        "projectName": "SchoolManagementSystem",
+        "projectPath": "C:\\Users\\Kyrich\\Desktop\\practice\\SchoolManagementSystem\\SchoolManagementSystem\\SchoolManagementSystem.csproj",
+        "packagesPath": "C:\\Users\\Kyrich\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kyrich\\Desktop\\practice\\SchoolManagementSystem\\SchoolManagementSystem\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\Kyrich\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\Kyrich\\Desktop\\practice\\SchoolManagementSystem\\UnitTestProject1\\UnitTestProject1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Kyrich\\Desktop\\practice\\SchoolManagementSystem\\UnitTestProject1\\UnitTestProject1.csproj",
+        "projectName": "UnitTestProject1",
+        "projectPath": "C:\\Users\\Kyrich\\Desktop\\practice\\SchoolManagementSystem\\UnitTestProject1\\UnitTestProject1.csproj",
+        "packagesPath": "C:\\Users\\Kyrich\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kyrich\\Desktop\\practice\\SchoolManagementSystem\\UnitTestProject1\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\Kyrich\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "C:\\Users\\Kyrich\\Desktop\\practice\\SchoolManagementSystem\\SchoolManagementSystem\\SchoolManagementSystem.csproj": {
+                "projectPath": "C:\\Users\\Kyrich\\Desktop\\practice\\SchoolManagementSystem\\SchoolManagementSystem\\SchoolManagementSystem.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.2.10, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.2.10, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
